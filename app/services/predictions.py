@@ -28,6 +28,7 @@ from app.forecasting.live_simulation import (
 )
 from app.forecasting.poisson import forecast_poisson, probabilities_from_matrix
 from app.observability.metrics import PREDICTION_COUNT, PREDICTION_LATENCY
+from app.providers.football.base import ProviderUnavailable
 from app.providers.football.composite import CompositeFootballProvider
 from app.repositories.catalog import CatalogRepository
 from app.repositories.database import Database
@@ -365,7 +366,10 @@ class PredictionService:
             state = CanonicalMatchState()
             for event in events:
                 state.apply(event)
-            statistics = await self.provider.get_match_statistics(match_id)
+            try:
+                statistics = await self.provider.get_match_statistics(match_id)
+            except ProviderUnavailable:
+                statistics = None
             if statistics and statistics.captured_at > generated_at:
                 statistics = None
             (
