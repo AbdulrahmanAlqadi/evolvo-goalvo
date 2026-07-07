@@ -4,7 +4,7 @@ import json
 import logging
 import uuid
 from dataclasses import asdict
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from app.core.config import Settings
@@ -370,7 +370,7 @@ class PredictionService:
                 statistics = await self.provider.get_match_statistics(match_id)
             except ProviderUnavailable:
                 statistics = None
-            if statistics and statistics.captured_at > generated_at:
+            if statistics and statistics.captured_at > generated_at + timedelta(seconds=5):
                 statistics = None
             (
                 home_xg,
@@ -749,6 +749,8 @@ class PredictionService:
     def _live_evidence(
         self, match, state: CanonicalMatchState, statistics: MatchStatistics | None, minute: int
     ) -> list[EvidenceItem]:
+        home = match.home_team.name_ar or match.home_team.name
+        away = match.away_team.name_ar or match.away_team.name
         evidence = [
             EvidenceItem(
                 code="CURRENT_SCORE",
@@ -763,6 +765,85 @@ class PredictionService:
                 ),
             )
         ]
+        if statistics:
+            stat_parts = []
+            if statistics.possession_home is not None and statistics.possession_away is not None:
+                stat_parts.append(
+                    f"الاستحواذ {home} {statistics.possession_home:.1f}% "
+                    f"و{away} {statistics.possession_away:.1f}%"
+                )
+            if statistics.shots_home is not None and statistics.shots_away is not None:
+                stat_parts.append(
+                    f"التسديدات {home} {statistics.shots_home} و{away} {statistics.shots_away}"
+                )
+            if (
+                statistics.shots_on_target_home is not None
+                and statistics.shots_on_target_away is not None
+            ):
+                stat_parts.append(
+                    f"على المرمى {home} {statistics.shots_on_target_home} "
+                    f"و{away} {statistics.shots_on_target_away}"
+                )
+            if statistics.passes_home is not None and statistics.passes_away is not None:
+                stat_parts.append(
+                    f"التمريرات {home} {statistics.passes_home} و{away} {statistics.passes_away}"
+                )
+            if (
+                statistics.pass_accuracy_home is not None
+                and statistics.pass_accuracy_away is not None
+            ):
+                stat_parts.append(
+                    f"دقة التمرير {home} {statistics.pass_accuracy_home:.1f}% "
+                    f"و{away} {statistics.pass_accuracy_away:.1f}%"
+                )
+            if statistics.corners_home is not None and statistics.corners_away is not None:
+                stat_parts.append(
+                    f"الركنيات {home} {statistics.corners_home} و{away} {statistics.corners_away}"
+                )
+            if statistics.fouls_home is not None and statistics.fouls_away is not None:
+                stat_parts.append(
+                    f"الأخطاء {home} {statistics.fouls_home} و{away} {statistics.fouls_away}"
+                )
+            if (
+                statistics.yellow_cards_home is not None
+                and statistics.yellow_cards_away is not None
+            ):
+                stat_parts.append(
+                    f"البطاقات الصفراء {home} {statistics.yellow_cards_home} "
+                    f"و{away} {statistics.yellow_cards_away}"
+                )
+            if statistics.red_cards_home or statistics.red_cards_away:
+                stat_parts.append(
+                    f"البطاقات الحمراء {home} {statistics.red_cards_home} "
+                    f"و{away} {statistics.red_cards_away}"
+                )
+            if statistics.offsides_home is not None and statistics.offsides_away is not None:
+                stat_parts.append(
+                    f"التسلل {home} {statistics.offsides_home} و{away} {statistics.offsides_away}"
+                )
+            if statistics.saves_home is not None and statistics.saves_away is not None:
+                stat_parts.append(
+                    f"تصديات الحارس {home} {statistics.saves_home} "
+                    f"و{away} {statistics.saves_away}"
+                )
+            if stat_parts:
+                shot_direction = (
+                    "HOME"
+                    if (statistics.shots_on_target_home or 0)
+                    > (statistics.shots_on_target_away or 0)
+                    else "AWAY"
+                    if (statistics.shots_on_target_away or 0)
+                    > (statistics.shots_on_target_home or 0)
+                    else "NEUTRAL"
+                )
+                evidence.append(
+                    EvidenceItem(
+                        code="LIVE_TEAM_STATS",
+                        direction=shot_direction,
+                        importance=0.30,
+                        description_ar="الإحصائيات المباشرة: " + "؛ ".join(stat_parts) + ".",
+                    )
+                )
         if state.red_cards_home != state.red_cards_away:
             evidence.append(
                 EvidenceItem(

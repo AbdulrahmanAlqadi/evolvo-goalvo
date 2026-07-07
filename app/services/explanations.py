@@ -43,9 +43,7 @@ class ExplanationService:
                     if item.importance >= 0.15
                     else "supporting"
                 ),
-                "description_ar": _DIGIT_PATTERN.sub("", item.description_ar)
-                .replace("  ", " ")
-                .strip(),
+                "description_ar": item.description_ar.replace("  ", " ").strip(),
             }
             for item in evidence
         ]

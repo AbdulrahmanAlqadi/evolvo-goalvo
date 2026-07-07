@@ -3,6 +3,7 @@ from __future__ import annotations
 from app.core.config import Settings
 from app.providers.football.api_football import ApiFootballProvider
 from app.providers.football.composite import CompositeFootballProvider
+from app.providers.football.espn import EspnFootballProvider
 from app.providers.football.football_data_org import FootballDataOrgProvider
 from app.providers.football.mock import MockFootballProvider
 from app.providers.football.replay import ReplayFootballProvider
@@ -22,6 +23,8 @@ def build_single_provider(name: str, settings: Settings):
         return ApiFootballProvider(settings)
     if name == "football_data_org":
         return FootballDataOrgProvider(settings)
+    if name == "espn":
+        return EspnFootballProvider(settings)
     if name == "thesportsdb":
         return TheSportsDbProvider(settings)
     raise ValueError(f"unsupported football provider: {name}")

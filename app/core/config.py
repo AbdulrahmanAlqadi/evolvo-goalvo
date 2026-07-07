@@ -35,11 +35,12 @@ class Settings(BaseSettings):
     api_rate_limit_window_seconds: int = Field(default=60, ge=1, le=3600)
 
     football_provider: str = "worldcup26"
-    football_provider_fallbacks: str = "api_football,football_data_org,thesportsdb,replay,mock"
+    football_provider_fallbacks: str = "api_football,football_data_org,espn,thesportsdb,replay,mock"
     football_request_timeout_seconds: float = Field(default=10.0, gt=0, le=60)
     football_max_retries: int = Field(default=2, ge=0, le=5)
     football_allowed_hosts: str = (
-        "v3.football.api-sports.io,api.football-data.org,www.thesportsdb.com,worldcup26.ir"
+        "v3.football.api-sports.io,api.football-data.org,www.thesportsdb.com,"
+        "worldcup26.ir,site.api.espn.com"
     )
     api_football_key: str = ""
     api_football_base_url: str = "https://v3.football.api-sports.io"
@@ -52,6 +53,8 @@ class Settings(BaseSettings):
     thesportsdb_key: str = "3"
     thesportsdb_base_url: str = "https://www.thesportsdb.com/api/v1/json"
     thesportsdb_team_mapping_path: Path = Path("./configs/thesportsdb_team_map.json")
+    espn_api_base_url: str = "https://site.api.espn.com"
+    espn_match_id_map: str = '{"worldcup26:game:94":"760507"}'
     worldcup26_base_url: str = "https://worldcup26.ir"
     world_cup_only: bool = True
     world_cup_competition_ids: str = (

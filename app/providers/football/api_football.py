@@ -234,10 +234,22 @@ class ApiFootballProvider(SafeHttpProvider):
             shots_away=value(teams[1], "Total Shots"),
             shots_on_target_home=value(teams[0], "Shots on Goal"),
             shots_on_target_away=value(teams[1], "Shots on Goal"),
+            passes_home=value(teams[0], "Total passes"),
+            passes_away=value(teams[1], "Total passes"),
+            pass_accuracy_home=value(teams[0], "Passes %"),
+            pass_accuracy_away=value(teams[1], "Passes %"),
             corners_home=value(teams[0], "Corner Kicks"),
             corners_away=value(teams[1], "Corner Kicks"),
+            fouls_home=value(teams[0], "Fouls"),
+            fouls_away=value(teams[1], "Fouls"),
+            yellow_cards_home=value(teams[0], "Yellow Cards"),
+            yellow_cards_away=value(teams[1], "Yellow Cards"),
             red_cards_home=value(teams[0], "Red Cards") or 0,
             red_cards_away=value(teams[1], "Red Cards") or 0,
+            offsides_home=value(teams[0], "Offsides"),
+            offsides_away=value(teams[1], "Offsides"),
+            saves_home=value(teams[0], "Goalkeeper Saves"),
+            saves_away=value(teams[1], "Goalkeeper Saves"),
         )
 
     async def get_lineups(self, match_id: str) -> list[dict]:

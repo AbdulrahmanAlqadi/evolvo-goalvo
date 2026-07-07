@@ -97,8 +97,10 @@ The default `.env.example` is World Cup API-first:
 WORLD_CUP_ONLY=true
 TEAM_LOCALIZATION_PATH=./configs/team_localization_ar.json
 FOOTBALL_PROVIDER=worldcup26
-FOOTBALL_PROVIDER_FALLBACKS=api_football,football_data_org,thesportsdb,replay,mock
+FOOTBALL_PROVIDER_FALLBACKS=api_football,football_data_org,espn,thesportsdb,replay,mock
 WORLDCUP26_BASE_URL=https://worldcup26.ir
+ESPN_API_BASE_URL=https://site.api.espn.com
+ESPN_MATCH_ID_MAP={"worldcup26:game:94":"760507"}
 ```
 
 For deterministic offline development, explicitly switch to:
@@ -210,6 +212,14 @@ Set `FOOTBALL_PROVIDER=api_football`, `API_FOOTBALL_KEY`, competition/season and
 ### football-data.org
 
 Set `FOOTBALL_PROVIDER=football_data_org` and `FOOTBALL_DATA_ORG_KEY`. The free plan is rate-limited, so it is not treated as high-frequency real-time coverage.
+
+### ESPN live statistics
+
+The ESPN adapter is a free stats-only fallback for mapped World Cup matches. It never creates
+fixtures or predictions. Add explicit canonical match-to-ESPN event mappings in
+`ESPN_MATCH_ID_MAP`; the live service can then feed possession, shots, shots on target, passes,
+pass accuracy, corners, fouls, cards, offsides and saves into the bounded evidence package sent to
+the LLM.
 
 ### TheSportsDB
 
