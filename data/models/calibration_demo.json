@@ -1,0 +1,8 @@
+{
+  "type": "temperature_scaling",
+  "version": "demo-temperature-v1",
+  "temperature": 0.6,
+  "validation_log_loss": 1.0468240272720504,
+  "validation_count": 4,
+  "warning": "Tiny validation sample; not production calibration."
+}

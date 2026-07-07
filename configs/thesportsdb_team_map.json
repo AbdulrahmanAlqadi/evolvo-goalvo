@@ -1,0 +1,57 @@
+{
+  "worldcup26:8": {
+    "fifa_code": "SUI",
+    "name": "Switzerland",
+    "thesportsdb_id": "134506"
+  },
+  "worldcup26:10": {
+    "fifa_code": "MAR",
+    "name": "Morocco",
+    "thesportsdb_id": "136139"
+  },
+  "worldcup26:13": {
+    "fifa_code": "USA",
+    "name": "USA",
+    "thesportsdb_id": "134514"
+  },
+  "worldcup26:25": {
+    "fifa_code": "BEL",
+    "name": "Belgium",
+    "thesportsdb_id": "134515"
+  },
+  "worldcup26:26": {
+    "fifa_code": "EGY",
+    "name": "Egypt",
+    "thesportsdb_id": "136138"
+  },
+  "worldcup26:29": {
+    "fifa_code": "ESP",
+    "name": "Spain",
+    "thesportsdb_id": "133909"
+  },
+  "worldcup26:33": {
+    "fifa_code": "FRA",
+    "name": "France",
+    "thesportsdb_id": "133913"
+  },
+  "worldcup26:36": {
+    "fifa_code": "NOR",
+    "name": "Norway",
+    "thesportsdb_id": "136516"
+  },
+  "worldcup26:37": {
+    "fifa_code": "ARG",
+    "name": "Argentina",
+    "thesportsdb_id": "134509"
+  },
+  "worldcup26:41": {
+    "fifa_code": "POR",
+    "name": "Portugal",
+    "thesportsdb_id": "133908"
+  },
+  "worldcup26:44": {
+    "fifa_code": "COL",
+    "name": "Colombia",
+    "thesportsdb_id": "134501"
+  }
+}

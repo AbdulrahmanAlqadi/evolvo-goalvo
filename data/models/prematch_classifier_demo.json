@@ -1,0 +1,29 @@
+{
+  "type": "multinomial_logistic_regression",
+  "version": "demo-trained-v1",
+  "feature_names": [
+    "elo_diff_scaled",
+    "neutral_venue",
+    "bias"
+  ],
+  "coefficients_feature_by_class": [
+    [
+      0.41087805393697363,
+      -0.19658205385169178,
+      -0.214296000085282
+    ],
+    [
+      -0.586660037601004,
+      1.2943732315303602,
+      -0.7077131939293564
+    ],
+    [
+      0.8343574018112375,
+      -0.9043444085381817,
+      0.06998700672694474
+    ]
+  ],
+  "trained_matches": 16,
+  "trained_until": "2024-10-15T00:00:00Z",
+  "warning": "Tiny included sample; not a production model."
+}

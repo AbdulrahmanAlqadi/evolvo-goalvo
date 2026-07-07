@@ -1,0 +1,120 @@
+from __future__ import annotations
+
+from datetime import datetime
+
+from app.domain.entities import Match
+from app.features.base import FeatureValue, assert_no_future_data
+
+
+def build_pre_match_features(
+    match: Match,
+    *,
+    prediction_time: datetime,
+    home_elo: float,
+    away_elo: float,
+    home_attack: float,
+    away_attack: float,
+    home_defence: float,
+    away_defence: float,
+    rest_days_home: float | None = None,
+    rest_days_away: float | None = None,
+) -> list[FeatureValue]:
+    observed = min(match.updated_at, prediction_time)
+    values = [
+        FeatureValue(
+            name="elo_diff",
+            value=home_elo - away_elo,
+            dtype="float",
+            source="elo_registry",
+            event_timestamp=observed,
+            availability_timestamp=observed,
+            missing_policy="required",
+            leakage_risk="low",
+            valid_min=-2000,
+            valid_max=2000,
+        ),
+        FeatureValue(
+            name="home_attack",
+            value=home_attack,
+            dtype="float",
+            source="historical_results",
+            event_timestamp=observed,
+            availability_timestamp=observed,
+            missing_policy="competition_mean",
+            leakage_risk="medium",
+            valid_min=0,
+            valid_max=5,
+        ),
+        FeatureValue(
+            name="away_attack",
+            value=away_attack,
+            dtype="float",
+            source="historical_results",
+            event_timestamp=observed,
+            availability_timestamp=observed,
+            missing_policy="competition_mean",
+            leakage_risk="medium",
+            valid_min=0,
+            valid_max=5,
+        ),
+        FeatureValue(
+            name="home_defence",
+            value=home_defence,
+            dtype="float",
+            source="historical_results",
+            event_timestamp=observed,
+            availability_timestamp=observed,
+            missing_policy="competition_mean",
+            leakage_risk="medium",
+            valid_min=0,
+            valid_max=5,
+        ),
+        FeatureValue(
+            name="away_defence",
+            value=away_defence,
+            dtype="float",
+            source="historical_results",
+            event_timestamp=observed,
+            availability_timestamp=observed,
+            missing_policy="competition_mean",
+            leakage_risk="medium",
+            valid_min=0,
+            valid_max=5,
+        ),
+        FeatureValue(
+            name="neutral_venue",
+            value=match.neutral_venue,
+            dtype="bool",
+            source="fixture",
+            event_timestamp=observed,
+            availability_timestamp=observed,
+            missing_policy="true",
+            leakage_risk="low",
+        ),
+        FeatureValue(
+            name="rest_days_home",
+            value=rest_days_home,
+            dtype="float",
+            source="fixtures",
+            event_timestamp=observed,
+            availability_timestamp=observed,
+            missing_policy="missing_indicator",
+            leakage_risk="medium",
+            valid_min=0,
+            valid_max=365,
+        ),
+        FeatureValue(
+            name="rest_days_away",
+            value=rest_days_away,
+            dtype="float",
+            source="fixtures",
+            event_timestamp=observed,
+            availability_timestamp=observed,
+            missing_policy="missing_indicator",
+            leakage_risk="medium",
+            valid_min=0,
+            valid_max=365,
+        ),
+    ]
+    assert_no_future_data(values, prediction_time)
+    return values

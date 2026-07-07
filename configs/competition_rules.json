@@ -1,0 +1,8 @@
+{
+  "wc-2026": {
+    "regulation_minutes": 90,
+    "extra_time_minutes": 30,
+    "penalties_after_extra_time": true,
+    "two_legged": false
+  }
+}

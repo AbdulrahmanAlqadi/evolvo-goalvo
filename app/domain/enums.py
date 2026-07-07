@@ -1,0 +1,52 @@
+from enum import StrEnum
+
+
+class MatchStatus(StrEnum):
+    SCHEDULED = "SCHEDULED"
+    PRE_MATCH = "PRE_MATCH"
+    LIVE = "LIVE"
+    HALF_TIME = "HALF_TIME"
+    EXTRA_TIME = "EXTRA_TIME"
+    PENALTIES = "PENALTIES"
+    FINISHED = "FINISHED"
+    POSTPONED = "POSTPONED"
+    CANCELLED = "CANCELLED"
+
+
+class MatchStage(StrEnum):
+    GROUP = "GROUP"
+    ROUND_OF_32 = "ROUND_OF_32"
+    ROUND_OF_16 = "ROUND_OF_16"
+    QUARTER_FINAL = "QUARTER_FINAL"
+    SEMI_FINAL = "SEMI_FINAL"
+    THIRD_PLACE = "THIRD_PLACE"
+    FINAL = "FINAL"
+    OTHER = "OTHER"
+
+
+class EventType(StrEnum):
+    GOAL = "GOAL"
+    GOAL_CANCELLED = "GOAL_CANCELLED"
+    OWN_GOAL = "OWN_GOAL"
+    PENALTY_SCORED = "PENALTY_SCORED"
+    PENALTY_MISSED = "PENALTY_MISSED"
+    RED_CARD = "RED_CARD"
+    YELLOW_RED = "YELLOW_RED"
+    SUBSTITUTION = "SUBSTITUTION"
+    PERIOD_START = "PERIOD_START"
+    PERIOD_END = "PERIOD_END"
+    SHOOTOUT_KICK = "SHOOTOUT_KICK"
+    OTHER = "OTHER"
+
+
+class TeamSide(StrEnum):
+    HOME = "HOME"
+    AWAY = "AWAY"
+    NEUTRAL = "NEUTRAL"
+
+
+class ProviderHealth(StrEnum):
+    HEALTHY = "healthy"
+    DEGRADED = "degraded"
+    COOLDOWN = "cooldown"
+    UNAVAILABLE = "unavailable"

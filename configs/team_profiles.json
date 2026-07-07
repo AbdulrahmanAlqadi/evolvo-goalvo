@@ -1,0 +1,290 @@
+{
+  "alg": {
+    "attack": 1.071,
+    "defence": 0.929,
+    "elo": 1756,
+    "source": "world_football_elo"
+  },
+  "arg": {
+    "attack": 1.181,
+    "defence": 0.819,
+    "elo": 2151,
+    "source": "world_football_elo"
+  },
+  "aus": {
+    "attack": 1.082,
+    "defence": 0.918,
+    "elo": 1795,
+    "source": "world_football_elo"
+  },
+  "aut": {
+    "attack": 1.089,
+    "defence": 0.911,
+    "elo": 1821,
+    "source": "world_football_elo"
+  },
+  "bel": {
+    "attack": 1.114,
+    "defence": 0.886,
+    "elo": 1910,
+    "source": "world_football_elo"
+  },
+  "bih": {
+    "attack": 1.029,
+    "defence": 0.971,
+    "elo": 1605,
+    "source": "world_football_elo"
+  },
+  "bra": {
+    "attack": 1.137,
+    "defence": 0.863,
+    "elo": 1993,
+    "source": "world_football_elo"
+  },
+  "can": {
+    "attack": 1.064,
+    "defence": 0.936,
+    "elo": 1729,
+    "source": "world_football_elo"
+  },
+  "civ": {
+    "attack": 1.063,
+    "defence": 0.937,
+    "elo": 1727,
+    "source": "world_football_elo"
+  },
+  "cod": {
+    "attack": 1.057,
+    "defence": 0.943,
+    "elo": 1704,
+    "source": "world_football_elo"
+  },
+  "col": {
+    "attack": 1.141,
+    "defence": 0.859,
+    "elo": 2009,
+    "source": "world_football_elo"
+  },
+  "cpv": {
+    "attack": 1.033,
+    "defence": 0.967,
+    "elo": 1619,
+    "source": "world_football_elo"
+  },
+  "cro": {
+    "attack": 1.106,
+    "defence": 0.894,
+    "elo": 1881,
+    "source": "world_football_elo"
+  },
+  "cuw": {
+    "attack": 0.983,
+    "defence": 1.017,
+    "elo": 1438,
+    "source": "world_football_elo"
+  },
+  "cze": {
+    "attack": 1.05,
+    "defence": 0.95,
+    "elo": 1680,
+    "source": "world_football_elo"
+  },
+  "ecu": {
+    "attack": 1.103,
+    "defence": 0.897,
+    "elo": 1871,
+    "source": "world_football_elo"
+  },
+  "egy": {
+    "attack": 1.069,
+    "defence": 0.931,
+    "elo": 1747,
+    "source": "world_football_elo"
+  },
+  "eng": {
+    "attack": 1.16,
+    "defence": 0.84,
+    "elo": 2076,
+    "source": "world_football_elo"
+  },
+  "esp": {
+    "attack": 1.183,
+    "defence": 0.817,
+    "elo": 2159,
+    "source": "world_football_elo"
+  },
+  "fra": {
+    "attack": 1.179,
+    "defence": 0.821,
+    "elo": 2143,
+    "source": "world_football_elo"
+  },
+  "ger": {
+    "attack": 1.113,
+    "defence": 0.887,
+    "elo": 1907,
+    "source": "world_football_elo"
+  },
+  "gha": {
+    "attack": 1.019,
+    "defence": 0.981,
+    "elo": 1570,
+    "source": "world_football_elo"
+  },
+  "hai": {
+    "attack": 1.005,
+    "defence": 0.995,
+    "elo": 1517,
+    "source": "world_football_elo"
+  },
+  "irn": {
+    "attack": 1.073,
+    "defence": 0.927,
+    "elo": 1764,
+    "source": "world_football_elo"
+  },
+  "irq": {
+    "attack": 1.017,
+    "defence": 0.983,
+    "elo": 1561,
+    "source": "world_football_elo"
+  },
+  "jor": {
+    "attack": 1.036,
+    "defence": 0.964,
+    "elo": 1628,
+    "source": "world_football_elo"
+  },
+  "jpn": {
+    "attack": 1.108,
+    "defence": 0.892,
+    "elo": 1888,
+    "source": "world_football_elo"
+  },
+  "kor": {
+    "attack": 1.062,
+    "defence": 0.938,
+    "elo": 1723,
+    "source": "world_football_elo"
+  },
+  "ksa": {
+    "attack": 1.027,
+    "defence": 0.973,
+    "elo": 1596,
+    "source": "world_football_elo"
+  },
+  "mar": {
+    "attack": 1.117,
+    "defence": 0.883,
+    "elo": 1921,
+    "source": "world_football_elo"
+  },
+  "mex": {
+    "attack": 1.115,
+    "defence": 0.885,
+    "elo": 1913,
+    "source": "world_football_elo"
+  },
+  "ned": {
+    "attack": 1.131,
+    "defence": 0.869,
+    "elo": 1971,
+    "source": "world_football_elo"
+  },
+  "nor": {
+    "attack": 1.131,
+    "defence": 0.869,
+    "elo": 1972,
+    "source": "world_football_elo"
+  },
+  "nzl": {
+    "attack": 1.009,
+    "defence": 0.991,
+    "elo": 1534,
+    "source": "world_football_elo"
+  },
+  "pan": {
+    "attack": 1.044,
+    "defence": 0.956,
+    "elo": 1658,
+    "source": "world_football_elo"
+  },
+  "par": {
+    "attack": 1.087,
+    "defence": 0.913,
+    "elo": 1814,
+    "source": "world_football_elo"
+  },
+  "por": {
+    "attack": 1.143,
+    "defence": 0.858,
+    "elo": 2013,
+    "source": "world_football_elo"
+  },
+  "qat": {
+    "attack": 0.975,
+    "defence": 1.025,
+    "elo": 1411,
+    "source": "world_football_elo"
+  },
+  "rsa": {
+    "attack": 1.017,
+    "defence": 0.983,
+    "elo": 1560,
+    "source": "world_football_elo"
+  },
+  "sco": {
+    "attack": 1.068,
+    "defence": 0.932,
+    "elo": 1745,
+    "source": "world_football_elo"
+  },
+  "sen": {
+    "attack": 1.088,
+    "defence": 0.912,
+    "elo": 1816,
+    "source": "world_football_elo"
+  },
+  "sui": {
+    "attack": 1.123,
+    "defence": 0.877,
+    "elo": 1943,
+    "source": "world_football_elo"
+  },
+  "swe": {
+    "attack": 1.064,
+    "defence": 0.936,
+    "elo": 1731,
+    "source": "world_football_elo"
+  },
+  "tun": {
+    "attack": 1.017,
+    "defence": 0.983,
+    "elo": 1562,
+    "source": "world_football_elo"
+  },
+  "tur": {
+    "attack": 1.098,
+    "defence": 0.902,
+    "elo": 1852,
+    "source": "world_football_elo"
+  },
+  "uru": {
+    "attack": 1.095,
+    "defence": 0.905,
+    "elo": 1841,
+    "source": "world_football_elo"
+  },
+  "usa": {
+    "attack": 1.083,
+    "defence": 0.917,
+    "elo": 1798,
+    "source": "world_football_elo"
+  },
+  "uzb": {
+    "attack": 1.036,
+    "defence": 0.964,
+    "elo": 1631,
+    "source": "world_football_elo"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "competition": {
+    "id": "wc-2026",
+    "name": "FIFA World Cup",
+    "name_ar": "كأس العالم",
+    "season": "2026",
+    "provider_ids": {
+      "replay": "wc-2026"
+    }
+  },
+  "home_team": {
+    "id": "arg",
+    "name": "Argentina",
+    "name_ar": "الأرجنتين",
+    "country_code": "ARG",
+    "provider_ids": {
+      "replay": "team-arg"
+    }
+  },
+  "away_team": {
+    "id": "fra",
+    "name": "France",
+    "name_ar": "فرنسا",
+    "country_code": "FRA",
+    "provider_ids": {
+      "replay": "team-fra"
+    }
+  },
+  "match": {
+    "id": "demo-match-001",
+    "kickoff": "2026-07-06T18:00:00Z",
+    "status": "PRE_MATCH",
+    "stage": "FINAL",
+    "neutral_venue": true,
+    "venue": "Demo Stadium",
+    "minute": null,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "updated_at": "2026-07-05T23:59:40Z",
+    "provenance": [
+      {
+        "provider": "replay",
+        "provider_entity_id": "demo-match-001",
+        "field": null,
+        "observed_at": "2026-07-05T23:59:40Z",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "statistics": {
+    "match_id": "demo-match-001",
+    "captured_at": "2026-07-06T19:28:00Z",
+    "possession_home": 53.0,
+    "possession_away": 47.0,
+    "shots_home": 13,
+    "shots_away": 11,
+    "shots_on_target_home": 6,
+    "shots_on_target_away": 4,
+    "xg_home": 1.72,
+    "xg_away": 1.21,
+    "corners_home": 5,
+    "corners_away": 4,
+    "red_cards_home": 0,
+    "red_cards_away": 1
+  },
+  "lineups": [
+    {
+      "team_id": "arg",
+      "confirmed": true,
+      "announced_at": "2026-07-06T16:45:00+00:00",
+      "formation": "4-3-3"
+    },
+    {
+      "team_id": "fra",
+      "confirmed": true,
+      "announced_at": "2026-07-06T16:47:00+00:00",
+      "formation": "4-2-3-1"
+    }
+  ],
+  "availability": [],
+  "squads": [],
+  "events": [
+    {
+      "id": "replay:e1",
+      "match_id": "demo-match-001",
+      "provider": "replay",
+      "provider_event_id": "e1",
+      "type": "GOAL",
+      "side": "HOME",
+      "minute": 17,
+      "second": 10,
+      "player_id": "arg-10",
+      "related_event_id": null,
+      "is_cancelled": false,
+      "occurred_at": "2026-07-06T18:17:10Z",
+      "received_at": "2026-07-06T18:17:14Z",
+      "payload": {}
+    },
+    {
+      "id": "replay:e2",
+      "match_id": "demo-match-001",
+      "provider": "replay",
+      "provider_event_id": "e2",
+      "type": "SUBSTITUTION",
+      "side": "AWAY",
+      "minute": 46,
+      "second": 0,
+      "player_id": "fra-9",
+      "related_event_id": null,
+      "is_cancelled": false,
+      "occurred_at": "2026-07-06T19:01:00Z",
+      "received_at": "2026-07-06T19:01:04Z",
+      "payload": {}
+    },
+    {
+      "id": "replay:e3",
+      "match_id": "demo-match-001",
+      "provider": "replay",
+      "provider_event_id": "e3",
+      "type": "GOAL",
+      "side": "AWAY",
+      "minute": 63,
+      "second": 22,
+      "player_id": "fra-7",
+      "related_event_id": null,
+      "is_cancelled": false,
+      "occurred_at": "2026-07-06T19:18:22Z",
+      "received_at": "2026-07-06T19:18:27Z",
+      "payload": {}
+    }
+  ]
+}

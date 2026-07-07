@@ -1,0 +1,19 @@
+{
+  "registry_version": "1.0.0",
+  "models": {
+    "prematch_classifier": {
+      "version": "demo-trained-v1",
+      "artifact": "prematch_classifier_demo.json",
+      "checksum": "7dba5f00a7903cd667d5ec9f8fc7591aa01acc1cfcce580af176497f3525b3e9",
+      "trained_until": "2024-10-15T00:00:00Z",
+      "model_card": "../../docs/model-card-prematch-demo.md"
+    },
+    "calibration": {
+      "version": "demo-temperature-v1",
+      "artifact": "calibration_demo.json",
+      "checksum": "f635c43eac27e3e45742fe5ce517c76a4bba6cc924e81f06499d1bea8d1ea917",
+      "trained_until": "2024-10-15T00:00:00Z",
+      "model_card": "../../docs/model-card-prematch-demo.md"
+    }
+  }
+}

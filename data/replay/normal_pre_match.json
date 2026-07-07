@@ -1,0 +1,70 @@
+{
+  "competition": {
+    "id": "wc-2026",
+    "name": "FIFA World Cup",
+    "name_ar": "كأس العالم",
+    "season": "2026",
+    "provider_ids": {
+      "replay": "wc-2026"
+    }
+  },
+  "home_team": {
+    "id": "arg",
+    "name": "Argentina",
+    "name_ar": "الأرجنتين",
+    "country_code": "ARG",
+    "provider_ids": {
+      "replay": "team-arg"
+    }
+  },
+  "away_team": {
+    "id": "fra",
+    "name": "France",
+    "name_ar": "فرنسا",
+    "country_code": "FRA",
+    "provider_ids": {
+      "replay": "team-fra"
+    }
+  },
+  "match": {
+    "id": "demo-match-001",
+    "kickoff": "2026-07-06T18:00:00Z",
+    "status": "PRE_MATCH",
+    "stage": "FINAL",
+    "neutral_venue": true,
+    "venue": "Demo Stadium",
+    "minute": null,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "updated_at": "2026-07-05T23:59:40Z",
+    "provenance": [
+      {
+        "provider": "replay",
+        "provider_entity_id": "demo-match-001",
+        "field": null,
+        "observed_at": "2026-07-05T23:59:40Z",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "statistics": null,
+  "lineups": [
+    {
+      "team_id": "arg",
+      "confirmed": true,
+      "announced_at": "2026-07-06T16:45:00+00:00",
+      "formation": "4-3-3"
+    },
+    {
+      "team_id": "fra",
+      "confirmed": true,
+      "announced_at": "2026-07-06T16:47:00+00:00",
+      "formation": "4-2-3-1"
+    }
+  ],
+  "availability": [],
+  "squads": [],
+  "events": []
+}

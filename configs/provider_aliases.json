@@ -1,0 +1,7 @@
+{
+  "reviewed_aliases": [
+    {"provider": "replay", "provider_id": "team-arg", "canonical_id": "arg"},
+    {"provider": "replay", "provider_id": "team-mar", "canonical_id": "mar"},
+    {"provider": "replay", "provider_id": "team-fra", "canonical_id": "fra"}
+  ]
+}
